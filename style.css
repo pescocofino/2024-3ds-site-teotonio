@@ -14,3 +14,21 @@
 --brunswick-green: #344e41ff;
 
 }
+
+body{
+    background-color: var(--hunter-green);
+    color: var(--timberwolf);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.caixa-principal{
+    background-color: var(--fern-green);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+}
+
