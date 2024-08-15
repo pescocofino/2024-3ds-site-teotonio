@@ -2,48 +2,45 @@ const caixaPrincipal = document.querySelector('.caixa-principal');
 const caixaPerguntas = document.querySelector('.caixa-perguntas');
 const caixaAlternativas = document.querySelector('.caixa-alternativas');
 const caixaResultados = document.querySelector('.caixa-resultados');
-const textoResultado = document.querySelector('.caixa-resultados');
+const textoResultado = document.querySelector('.texto-resultado'); 
 
 const perguntas = [
     {
-        enunciado: "Texto 1",
+        enunciado: "Em um apocalipse zumbi, voçê mataria seu amigo para sobreviver.",
         alternativas: [
             {
-                texto:"alternativa01",
+                texto: "Sim",
                 afirmacao: "afirmação01"
             },
             {
-                texto:"alternativa02",
+                texto: "Não",
                 afirmacao: "afirmação02"
-                
             }
         ]
     },
     {
-        enunciado: "Texto 2",
+        enunciado: "Voçê considera seus amigos mais proximos como parte da sua família",
         alternativas: [
             {
-                texto:"alternativa03",
+                texto: "Sim",
                 afirmacao: "afirmação03"
             },
             {
-                texto:"alternativa04",
+                texto: "Não",
                 afirmacao: "afirmação04"
-                
             }
         ]
     },
     {
-        enunciado: "Texto 3",
+        enunciado: "Voçê confiaria em uma pessoa que te traiu uma vez?",
         alternativas: [
             {
-                texto:"alternativa05",
+                texto: "alternativa05",
                 afirmacao: "afirmação03"
             },
             {
-                texto:"alternativa06",
+                texto: "alternativa06",
                 afirmacao: "afirmação04"
-                
             }
         ]
     },
@@ -51,13 +48,12 @@ const perguntas = [
         enunciado: "Texto 4",
         alternativas: [
             {
-                texto:"alternativa07",
+                texto: "alternativa07",
                 afirmacao: "afirmação03"
             },
             {
-                texto:"alternativa08",
+                texto: "alternativa08",
                 afirmacao: "afirmação04"
-                
             }
         ]
     },
@@ -65,13 +61,12 @@ const perguntas = [
         enunciado: "Texto 5",
         alternativas: [
             {
-                texto:"alternativa09",
+                texto: "alternativa09",
                 afirmacao: "afirmação03"
             },
             {
-                texto:"alternativa10",
+                texto: "alternativa10",
                 afirmacao: "afirmação04"
-                
             }
         ]
     },
@@ -79,24 +74,23 @@ const perguntas = [
         enunciado: "Texto 6",
         alternativas: [
             {
-                texto:"alternativa09",
+                texto: "alternativa11", 
                 afirmacao: "afirmação03"
             },
             {
-                texto:"alternativa10",
+                texto: "alternativa12", 
                 afirmacao: "afirmação04"
-                
             }
         ]
-    },
-]
+    }
+];
 
-let atual = 0
+let atual = 0;
 let perguntaAtual;
 let historiaFinal = "";
 
-function mostraPergunta(){
-    if(atual >= perguntas.length){
+function mostraPergunta() {
+    if (atual >= perguntas.length) {
         mostreResultado();
         return;
     }
@@ -106,33 +100,29 @@ function mostraPergunta(){
     mostraAlternativas();
 }
 
-mostraPergunta();
-function mostraPergunta(){
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    mostraAlternativas();
-}
-function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas){
+function mostraAlternativas() {
+    for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa;
-        botaoAlternativas.addEventListener("click", function(){
-            atual++;
-            mostraPergunta();
-        })
-        caixaAlternativas.appendChild(botaoAlternativas)
+        botaoAlternativas.textContent = alternativa.texto; 
+        botaoAlternativas.addEventListener("click", function() {
+            respostaSelecionada(alternativa); 
+        });
+        caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
 
-function respostaSelecionada(opcaoSelecionada){
+function respostaSelecionada(opcaoSelecionada) {
     const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + "";
-    atual++
+    historiaFinal += afirmacoes + " ";
+    atual++;
     mostraPergunta();
 }
 
-function mostreResultado(){
-    caixaPerguntas.textContent = " Ok ";
+function mostreResultado() {
+    caixaPerguntas.textContent = "Ok";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
 }
+
+
+mostraPergunta();
