@@ -75,11 +75,35 @@ const perguntas = [
             }
         ]
     },
+    {
+        enunciado: "Texto 6",
+        alternativas: [
+            {
+                texto:"alternativa09",
+                afirmacao: "afirmação03"
+            },
+            {
+                texto:"alternativa10",
+                afirmacao: "afirmação04"
+                
+            }
+        ]
+    },
 ]
 
+let atual = 0
+let perguntaAtual;
+let historiaFinal = "";
+
 function mostraPergunta(){
+    if(atual >= perguntas.length){
+        mostreResultado();
+        return;
+    }
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.textContent = "";
+    mostraAlternativas();
 }
 
 mostraPergunta();
@@ -98,4 +122,17 @@ function mostraAlternativas(){
         })
         caixaAlternativas.appendChild(botaoAlternativas)
     }
+}
+
+function respostaSelecionada(opcaoSelecionada){
+    const afirmacoes = opcaoSelecionada.afirmacao;
+    historiaFinal += afirmacoes + "";
+    atual++
+    mostraPergunta();
+}
+
+function mostreResultado(){
+    caixaPerguntas.textContent = " Ok ";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = "";
 }

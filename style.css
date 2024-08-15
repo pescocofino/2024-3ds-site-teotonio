@@ -32,3 +32,17 @@ body{
     padding: 20px;
 }
 
+button{
+    background-color: var(--timberwolf);
+    color: var(--fern-green);
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    transition: 0.3s;
+    margin: 10px auto;
+}
+
+button:hover{
+    background-color: var(--brunswick-green);
+}
+
