@@ -6,83 +6,71 @@ const textoResultado = document.querySelector('.texto-resultado');
 
 const perguntas = [
     {
-        enunciado: "Em um apocalipse zumbi, voçê mataria seu amigo para sobreviver.",
+        enunciado: "Voçê está em um apocalipse zumbi, você e seu amigo estão em uma situação onde só um dos dois pode sobreviver. Mataria seu amigo para sobreviver?",
         alternativas: [
             {
-                texto: "Sim",
-                afirmacao: "afirmação01"
+                texto: "Sim, pois e o unico jeito de garantir a minha sobrevivência.",
+                afirmacao: "Seu amigo e morto e voçê escapa sozinho."
             },
             {
-                texto: "Não",
-                afirmacao: "afirmação02"
+                texto: "Não, acredito que a outra maneira de sair dessa situação.",
+                afirmacao: "No final das contas você e seu amigo conseguem escapar juntos."
             }
         ]
     },
     {
-        enunciado: "Voçê considera seus amigos mais proximos como parte da sua família",
+        enunciado: "Você volta ao seu refugio para recuperar suas forças e encontra sobreviventes pedindo ajuda. Ira ajudá-los e leva-los ao seu refugio?",
         alternativas: [
             {
-                texto: "Sim",
-                afirmacao: "afirmação03"
+                texto: "Sim, quanto mais pessoas melhor.",
+                afirmacao: "Enquanto caminham até o refugio os sobreviventes o atacam e roubam seus recursos."
             },
             {
-                texto: "Não",
-                afirmacao: "afirmação04"
+                texto: "Não, muito arriscado confiar em outros.",
+                afirmacao: "Você vai embora e abandona os sobreviventes."
             }
         ]
     },
     {
-        enunciado: "Voçê confiaria em uma pessoa que te traiu uma vez?",
+        enunciado: "Você encontra um acampamento abandonado e completamente destruido.",
         alternativas: [
             {
-                texto: "alternativa05",
-                afirmacao: "afirmação03"
+                texto: "Explorar o acampamento em busca de recursos.",
+                afirmacao: "Ao explorar o acampamento, acaba encontra garrafas de água potável."
             },
             {
-                texto: "alternativa06",
-                afirmacao: "afirmação04"
+                texto: "Deixar pra lá.",
+                afirmacao: "Neste dia você acaba não encontrando mais nenhum recurso."
             }
         ]
     },
     {
-        enunciado: "Texto 4",
+        enunciado: "Na cidade, há um grande armazém abandonado mas, que está trancado. Tentar outra meio?",
         alternativas: [
             {
-                texto: "alternativa07",
-                afirmacao: "afirmação03"
+                texto: "Procurar outra entrada.",
+                afirmacao: "Você consegue entrar no armazém por um buraco no telhado mas vê que ja está saqueado."
             },
             {
-                texto: "alternativa08",
-                afirmacao: "afirmação04"
+                texto: "Ir embora e não vasculhar o armazém.",
+                afirmacao: "Você vai embora sem nada nesta noite."
             }
         ]
     },
     {
-        enunciado: "Texto 5",
+        enunciado: "Perto de um campo militar há diversos recursos valiosos mas, com grande risco.",
         alternativas: [
             {
-                texto: "alternativa09",
-                afirmacao: "afirmação03"
+                texto: "Arriscar e entrar no campo em busca de maiores recompensas.",
+                afirmacao: "Infelizmente, você não foi o unico a pensar nisso um grupo de saqueadores acaba e o encontrando e te matam."
             },
             {
-                texto: "alternativa10",
-                afirmacao: "afirmação04"
+                texto: "Manter sua segurança e continuar com poucos recursos",
+                afirmacao: "Mesmo com fome e sede você continua persistente pois amanha e um novo dia."
             }
         ]
     },
-    {
-        enunciado: "Texto 6",
-        alternativas: [
-            {
-                texto: "alternativa11", 
-                afirmacao: "afirmação03"
-            },
-            {
-                texto: "alternativa12", 
-                afirmacao: "afirmação04"
-            }
-        ]
-    }
+    
 ];
 
 let atual = 0;
